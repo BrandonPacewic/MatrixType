@@ -24,7 +24,7 @@ public:
 
     _Tp& operator[](const int&) const;
     
-    void push_back(const _Tp&);
+    void assign_back(const _Tp&);
 
 private:
     _Tp* elements;
@@ -41,11 +41,12 @@ public:
 
     _uniform_matrix_row<_Tp, _Sz>& operator[](const int&) const;
 
-    void push_back(const _Tp&);
+    void assign_back(const _Tp&);
 
 private:
     _uniform_matrix_row<_Tp, _Sz>* inner_rows;
     int current_row_index;
+    int fully_assigned_cells;
 };
 
 } // namespace bp
